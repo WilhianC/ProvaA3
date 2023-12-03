@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Product Card Design Using HTML and CSS - Coding Power</title>
+    <style>
+
+header {
+            background-color: #007BFF;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 0.5em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+ footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>WilKa Tech</h1>
+        <p>Venda de Serviços e Planos</p>
+    </header>
+
+    <nav>
+        <a href="index.html"> Página inicial</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="nossocontato.html">contato</a>
+        <a href="ocurriculo.html">Currículo dos profissionais</a>
+    </nav>
+
+   <div class="container">
+       <div class="product">
+           <div class="image">
+               <img class="product-image" src="sitepink.jpg" alt="">
+           </div>
+           <div class="color">
+               <span class="pink" data-image="sitepink.jpg" data-color="#FF00FF"></span>
+               <span class="LightSkyBlue" data-image="sitegreen.jpg" data-color="#87CEFA"></span>
+               <span class="black" data-image="siteblack.jpg" data-color="#222627"></span>
+               <span class="yellow" data-image="siteyellow.jpg" data-color="#FFFF00"></span>
+           </div>
+           <div class="title">
+               Site Portifólio pessoal
+           </div>
+           <div class="detail">
+               <p>Preço : <span>R$ 876,00
+        
+            
+               </span></p>
+               <a href="#">Adcionar ao carrinho
+            
+               </a>
+               <br> <br> <a href="index.html"> Página inicial</a></p>
+               
+          
+            </div>
+       </div>
+   </div>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+   <script>
+       $(".color span").click(function(){
+
+        $(".color span").removeClass("active");
+        $(this).addClass("active");
+        $(".detail span").css("color",$(this).attr("data-color"));
+        $(".detail a").css("background",$(this).attr("data-color"));
+        $(".product-image").attr("src",$(this).attr("data-image"));
+        $("body").css("background",$(this).attr("data-color"));
+       });
+   </script>
+   
+
+   <footer>
+    <p>&copy; 2023 WilKa Tech. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
